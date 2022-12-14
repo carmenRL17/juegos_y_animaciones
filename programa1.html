@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>programa 1</title>
+</head>
+<body>
+    <!--la documentacion es en 2d canvas en san google-->
+    <canvas width="600" height="400"><!-- canvas es como pizarra, un espacio donde podemos graficar-->
+
+    </canvas>
+    <script>
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "white"//color del canvas(porpirdad)
+        pincel.fillRect(0,0,600,400);//(funcion del canvas)la primera posicion es donde se inicia a graficar en el ancho(izq a der), la segunda inicio del alto (arriba-abajo)
+
+        pincel.fillStyle = "green"
+        pincel.fillRect(0,0,200,400)
+
+        pincel.fillStyle="red";
+        pincel.fillRect(400,0,200,400);
+
+        pincel.fillStyle = "yellow";
+        pincel.beginPath();// iniciar una RUTA unas nueva direccion
+        pincel.moveTo(300,200);
+        pincel.lineTo(200,400);
+        pincel.lineTo(400,400);//pita una linea
+        pincel.fill();//rellena 
+ 
+        pincel.fillStyle = "blue";
+        pincel.beginPath();// iniciar una RUTA unas nueva direccion
+        pincel.arc(300,200,50,0,2*3.14);//usamos la funcion arc para dibujar circunferencia.
+        //posiscion de funcion arc 300, 200 posiscion inicial en ele centro,50 es el tamanio del circulos en radio, 0 angulo inicial y angulo final 2*3.1416
+        pincel.fill();//rellena 
+    </script>
+    
+</body>
+</html>
